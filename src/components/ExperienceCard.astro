@@ -1,0 +1,10 @@
+---
+import type { ExperienceProps } from "../interfaces/interfaces";
+
+const { title, experience } = Astro.props as ExperienceProps;
+---
+
+<div class="bg-gray-100 p-6 rounded-lg shadow mb-4">
+    <h4 class="text-xl font-semibold mb-2">{title}</h4>
+    <p class="text-gray-700">{experience}</p>
+  </div>

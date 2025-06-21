@@ -1,0 +1,9 @@
+---
+import type { CardIndexProps } from "../interfaces/interfaces"
+const {title, description } = Astro.props as CardIndexProps;
+---
+
+<div class={`max-w-md mx-auto text-center opacity-0 translate-y-4 animate-fadeInUp delay-[${400 + 1 * 100}ms]`}>
+  <h1 class="text-2xl font-semibold mb-2">{title}</h1>
+  <p class="text-base text-gray-200">{description}</p>
+</div>

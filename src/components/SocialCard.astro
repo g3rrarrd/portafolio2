@@ -1,0 +1,10 @@
+---
+import type { SocialProps } from "../interfaces/interfaces"
+const {name, url, icon } = Astro.props as SocialProps;
+---
+
+<a href={url} target="_blank" class="bg-white text-black p-3 rounded-full shadow hover:scale-105 transition" title={name}>
+    <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+      <path d={icon}/>
+    </svg>
+  </a>

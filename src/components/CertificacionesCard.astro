@@ -1,0 +1,10 @@
+---
+import type { CertificacionesProps } from "../interfaces/interfaces"
+
+const {title, period} = Astro.props as CertificacionesProps
+---
+
+<div class="bg-gray-100 p-4 rounded-lg shadow">
+    <h4 class="font-semibold">{title}</h4>
+    <p class="text-sm text-gray-600">{period}</p>
+</div>

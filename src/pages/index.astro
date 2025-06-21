@@ -1,16 +1,169 @@
 ---
-
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ProyectoCard from '../components/ProyectoCard.astro';
+import Card from '../components/Card.astro';
+import SocialCard from '../components/SocialCard.astro';
+import SkillCard from '../components/skillCard.astro';
+import { cards, Proyectos, socials, skills, certificaciones, experience, education } from '../content/data/db';
+import '../styles/global.css'
+import ExperienceCard from '../components/ExperienceCard.astro';
+import CertificacionesCard from '../components/CertificacionesCard.astro';
+import EducationCard from '../components/EducationCard.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="es">
+  <head>
+    <title>Portafolio - Gerardo Rodríguez</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body class="font-sans bg-gray-50 text-gray-900 scroll-smooth">
+    <Header />
+		
+	<main class="h-screen snap-y snap-mandatory overflow-y-scroll bg-gray-900">
+	  <!-- SOBRE MÍ -->
+	  <section id="sobre-mi" class="h-screen snap-start bg-black text-white relative flex items-center justify-center px-6">
+		<div class="flex flex-col items-center gap-6 text-center max-w-5xl w-full z-10">
+	
+		  <!-- Título -->
+		  <h1 class="text-4xl font-bold animate-fadeInUp">Gerardo Rodríguez</h1>
+		  <p class="text-lg text-gray-300 animate-fadeInUp delay-100">Entusiasta de los datos · Backend Developer · DBA</p>
+	
+		  <!-- Imagen con animación -->
+		  <img
+			src="/foto.jpeg"
+			alt="Foto de Gerardo Rodríguez"
+			class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg opacity-0 translate-y-4 animate-fadeInUp delay-200"
+		  />
+	
+		  <!-- Redes sociales -->
+		  <div class="flex gap-6 justify-center opacity-0 translate-y-4 animate-fadeInUp delay-300">
+			{
+			  socials.map((social) => (
+				<SocialCard key={social.name} name={social.name} url={social.url} icon={social.icon} />
+			  ))
+			}
+		  </div>
+	
+		  <!-- Cards -->
+		  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4" style="display: block;">
+			{
+			  cards.map((card) => (
+				<Card key={card.title} title={card.title} description={card.description} />
+			  ))
+			}
+		  </div>
+		</div>
+	
+		<!-- Corte tipo papel inferior -->
+		<div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] rotate-180 z-0">
+		  <svg class="relative block w-[calc(100%+1.3px)] h-[100px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+			<path d="M0,0 C300,100 900,0 1200,100 L1200,0 L0,0 Z" fill="#f9fafb" />
+		  </svg>
+		</div>
+	  </section>
+	
+	  <!-- PROYECTOS -->
+		<section id="proyectos" class="h-screen snap-start pt-24 px-6 bg-gray-50 relative z-10 overflow-y-auto">
+			<div class="max-w-6xl mx-auto">
+			<h2 class="text-3xl font-bold mb-6 text-center text-gray-900">Proyectos</h2>
+		
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fadeInUp">
+				{
+				Proyectos.map((pro) => (
+					<ProyectoCard
+					key={pro.title}
+					title={pro.title}
+					period={pro.period}
+					link={pro.link}
+					description={pro.description}
+					technologies={pro.technologies}
+					/>
+				))
+				}
+			</div>
+			</div>
+		</section>
+	  
+		
+		<!-- SKILLS -->
+		<section id="skills" class="snap-start pt-24 px-6 bg-gray-800 text-white relative z-10 max-w-6xl mx-auto">
+			<h2 class="text-3xl font-bold mb-8 text-center">Habilidades Técnicas</h2>
+		  
+			{
+			  Object.entries(skills).map(([category, skillList]) => (
+				<Fragment key={category}>
+				  <h3 class="text-2xl font-semibold mb-4 mt-8 text-blue-400">{category}</h3>
+				  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+					{
+					  skillList.map(skill => (
+						<SkillCard key={skill.name} skillName={skill.name} skillLevel={skill.level} />
+					  ))
+					}
+				  </div>
+				</Fragment>
+			  ))
+			}
+		</section>	
+		
+		<section id="perfil" class="h-screen snap-start bg-white text-gray-900 px-6 max-w-6xl mx-auto relative overflow-y-auto py-16">
+			<div class="flex flex-col animate-fadeInUp">		  
+		  
+			  <!-- TÍTULO -->
+			  <h2 class="text-3xl font-bold mb-10 text-center">Perfil Profesional</h2>
+		  
+			  <!-- EXPERIENCIA -->
+			  <div class="mb-12">
+				<h3 class="text-2xl font-semibold mb-4 text-blue-500">Experiencia</h3>
+				{
+				  experience.map((exp) => (
+					<ExperienceCard
+						title={exp.title}
+						experience={exp.experience}
+					/>
+				  ))
+				}
+			  </div>
+		  
+			  <!-- CERTIFICACIONES -->
+			  <div class="mb-12">
+				<h3 class="text-2xl font-semibold mb-4 text-green-500">Certificaciones</h3>
+				<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+				  {
+					certificaciones.map((cert) => (
+					  <CertificacionesCard
+					  	title={cert.title}
+						period={cert.period}
+					  />
+					))
+				  }
+				</div>
+			  </div>
+		  
+			  <!-- EDUCACIÓN -->
+			  <div>
+				<h3 class="text-2xl font-semibold mb-4 text-indigo-500">Formación Académica</h3>
+				<div class="space-y-4">
+				  {
+					education.map((edu) => (
+					  <EducationCard
+					  	title={edu.title}
+						place={edu.place}
+						period={edu.period}
+					  />
+					))
+				  }
+				</div>
+			  </div>
+			</div>
+		  
+		</section>
+			
+	</main>
+	
+
+    <Footer />
+  </body>
 </html>
