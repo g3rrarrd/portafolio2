@@ -87,27 +87,6 @@ import EducationCard from '../components/EducationCard.astro';
 			</div>
 		</section>
 	  
-		
-		<!-- SKILLS -->
-		<section id="skills" class="snap-start pt-24 px-6 bg-gray-800 text-white relative z-10 max-w-6xl mx-auto">
-			<h2 class="text-3xl font-bold mb-8 text-center">Habilidades Técnicas</h2>
-		  
-			{
-			  Object.entries(skills).map(([category, skillList]) => (
-				<Fragment key={category}>
-				  <h3 class="text-2xl font-semibold mb-4 mt-8 text-blue-400">{category}</h3>
-				  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-					{
-					  skillList.map(skill => (
-						<SkillCard key={skill.name} skillName={skill.name} skillLevel={skill.level} />
-					  ))
-					}
-				  </div>
-				</Fragment>
-			  ))
-			}
-		</section>	
-		
 		<section id="perfil" class="h-screen snap-start bg-white text-gray-900 px-6 max-w-6xl mx-auto relative overflow-y-auto py-16">
 			<div class="flex flex-col animate-fadeInUp">		  
 		  
@@ -160,6 +139,28 @@ import EducationCard from '../components/EducationCard.astro';
 			</div>
 		  
 		</section>
+
+		<!-- SKILLS -->
+		<section id="skills" class="snap-start pt-24 px-6 bg-gray-800 text-white relative z-10 max-w-6xl mx-auto">
+			<h2 class="text-3xl font-bold mb-8 text-center">Habilidades Técnicas</h2>
+		  
+			{
+			  Object.entries(skills).map(([category, skillList]) => (
+				<Fragment key={category}>
+				  <h3 class="text-2xl font-semibold mb-4 mt-8 text-blue-400">{category}</h3>
+				  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+					{
+					  skillList.map(skill => (
+						<SkillCard key={skill.name} skillName={skill.name} skillLevel={skill.level} />
+					  ))
+					}
+				  </div>
+				</Fragment>
+			  ))
+			}
+		</section>	
+		
+		
 			
 	</main>
 	

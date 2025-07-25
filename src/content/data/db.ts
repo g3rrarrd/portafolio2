@@ -1,8 +1,6 @@
 import type  { SocialProps, CardIndexProps, CertificacionesProps, Skills, proyectos, ExperienceProps, EducationProps } from '../../interfaces/interfaces';
 
 
-/** USED ON INDEX  */
-
 export const socials: SocialProps[] = [
     {
       name: 'LinkedIn',
@@ -49,6 +47,20 @@ export const skills: Skills = {
 /** WORK EXPERIENCE */
 
 export const Proyectos: proyectos[] = [
+  {
+    title: "Pipeline de Datos y API con Caché Inteligente en Azure",
+    period: "2025",
+    link: "",
+    description: "Desarrollé una solución integral de backend que automatiza la migración de datos, expone una API segura y optimizada, y mejora el rendimiento mediante una capa de caché inteligente. El sistema incluye monitoreo con Application Insights, autenticación con Firebase y despliegue completo en la nube con Docker y Azure. Todo fue definido como infraestructura como código con Terraform.",
+    technologies: ["FastAPI (Python)", "Azure Data Factory", "Postgresql Database", "Redis Cache", "Firebase Authentication", "Docker", "Azure App Service (Linux)", "Application Insights", "Terraform"]
+  },
+  {
+    title: "Arquitectura de Plataforma de E-commerce Escalable en Azure",
+    period: "2025",
+    link : "",
+    description: "Diseñé e implementé una arquitectura moderna de e-commerce sobre la nube de Azure, enfocada en la escalabilidad, resiliencia y análisis de datos. El proyecto se dividió en múltiples componentes y repositorios independientes para facilitar el trabajo colaborativo entre equipos, mejorar el mantenimiento y permitir despliegues automatizados.",
+    technologies: ["Azure App Service (Linux)", "Azure Storage Queues", "Azure SQL Database + Synapse (Data Warehouse)", "Azure Data Factory (ETL)", "Terraform (Infraestructura como Código)"],
+  },
   {
     title: "Calculadora de varianza, desviacion media y estandar",
     period: "2025",
@@ -107,7 +119,6 @@ export const Proyectos: proyectos[] = [
     description: "La experiencia del usuario en plataformas de streaming depende de una respuesta rápida y un manejo eficiente del catálogo de contenido. Este proyecto emuló funcionalidades esenciales de una plataforma como Spotify, abordando retos como el diseño de consultas optimizadas y estructuras de datos adecuadas. Fue fundamental para demostrar la capacidad de construir sistemas escalables y orientados a contenidos dinámicos.",
     technologies: ["Java", "SpringBoot", "Oracle", "Linux", "JavaScript"],
   }
-  
 ];
 
 export const experience : ExperienceProps[] = [
@@ -122,26 +133,21 @@ export const education: EducationProps[] = [
     title: "Ingenieria en sistemas",
     place: "Universidad Nacional Autonoma de Honduras",
     period: "2020-Presente"
-  },
-  {
-    title: "Bachiller Tecnico en informatica",
-    place: "Liceo Católico Cristo Rey",
-    period: "2015-2018"
   }
 ]
 
 export const certificaciones : CertificacionesProps[] = [
   {
     title: "Analista de datos",
-    period: "2025"
+    period: "jul-2025"
   },
   {
-    title: "Cientifico de datos",
-    period: "2025"
+    title: "Ingenieria de datos",
+    period: "2025-Presente"
   },
   {
     title: "Base relacionales",
-    period: "2025"
+    period: "jul-2025"
   },
   {
     title: "Ingles B1",
@@ -149,14 +155,14 @@ export const certificaciones : CertificacionesProps[] = [
   },
   {
     title: "Python 1 y 2",
-    period: "2023"
+    period: "oct-2023"
   },
   {
     title: "Principios de ciberseguridad",
-    period: "2023"
+    period: "ene-2023"
   },
   {
     title: "Redes 1 y 2",
-    period: "2022"
+    period: "sep-2022"
   },
 ];
