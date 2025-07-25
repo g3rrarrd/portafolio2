@@ -138,20 +138,20 @@ export const education: EducationProps[] = [
 
 export const certificaciones : CertificacionesProps[] = [
   {
-    title: "Analista de datos",
-    period: "jul-2025"
-  },
-  {
     title: "Ingenieria de datos",
     period: "2025-Presente"
   },
   {
-    title: "Base relacionales",
+    title: "Ingles B1",
+    period: "2025-Presente"
+  },
+  {
+    title: "Analista de datos",
     period: "jul-2025"
   },
   {
-    title: "Ingles B1",
-    period: "2025-Presente"
+    title: "Base relacionales",
+    period: "jul-2025"
   },
   {
     title: "Python 1 y 2",
